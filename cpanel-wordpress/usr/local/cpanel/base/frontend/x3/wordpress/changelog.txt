@@ -1,0 +1,9 @@
+
+Changelog
+
+1.1
+	- Include stdheader
+	- License now GPL
+
+1.0
+	- Initial release
