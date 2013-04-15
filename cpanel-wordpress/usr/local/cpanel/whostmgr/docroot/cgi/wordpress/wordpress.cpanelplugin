@@ -1,5 +1,5 @@
-#cpanel plugin file 1.0 (for use with /usr/local/cpanel/bin/register_cpanelplugin)
-version: 1.0
+#cpanel plugin file 2.0 (for use with /usr/local/cpanel/bin/register_cpanelplugin)
+version: 2.0
 name:wordpress
 description:Wordpress Installer
 featuremanager:1
