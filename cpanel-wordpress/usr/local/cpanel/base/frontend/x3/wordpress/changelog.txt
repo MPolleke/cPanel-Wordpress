@@ -1,6 +1,11 @@
 
 Changelog
 
+2.0
+	- more languages supported
+	- only the deep path can be changed in the $_POST
+	- include also stdfooter
+
 1.1
 	- Include stdheader
 	- License now GPL
