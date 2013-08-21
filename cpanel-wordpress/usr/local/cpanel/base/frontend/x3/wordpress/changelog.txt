@@ -1,6 +1,9 @@
 
 Changelog
 
+2.1
+	- add English location, make it the default
+
 2.0
 	- more languages supported
 	- only the deep path can be changed in the $_POST

@@ -49,9 +49,9 @@ function wp_form() {
 
 function wp_install() {
 	/*
-	 * This function handles the install of Wordpress.
+	 * This function handles the install of WordPress.
 	 * It uses the information from cPanel, and the install path of the POST
-	 * It downloads the zipfile from a localised version of Wordpress.
+	 * It downloads the zipfile from a localised version of WordPress.
 	 * It then installs it in the specified path.
 	 * 
 	 */
@@ -67,26 +67,32 @@ function wp_install() {
 	}
 
 	// download the webpage
-	$output = file_get_contents($loc);
-	$temp = explode('.zip"',$output);
-	
-	// we try to find the download-url of the zipfile
-	if(count($temp)>1){
-		$temp2 = explode('href="',$temp[0]);
-		if(count($temp2)>1){
-			$url = array_pop($temp2);
-			$url .= ".zip";
-			// now check for the real filename
-			$filename = explode("/", $url);
-			$filename = array_pop($filename);
-		} else {
-			die('<p class="error">Something went wrong with collecting the address. Could it be that the location of the zipfile has changed?</p>');
-		}
-	} else {
-		die('<p class="error">Something went wrong with downloading the webpage. Could it be that the website ' . $loc . ' is down?</p>');
-	}
+	if ($loc != 'http://wordpress.org/') {
+    	$output = file_get_contents($loc);
+    	$temp = explode('.zip"',$output);
+    	
+    	// we try to find the download-url of the zipfile
+    	if(count($temp)>1){
+    		$temp2 = explode('href="',$temp[0]);
+    		if(count($temp2)>1){
+    			$url = array_pop($temp2);
+    			$url .= ".zip";
+    			// now check for the real filename
+    			$filename = explode("/", $url);
+    			$filename = array_pop($filename);
+    		} else {
+    			die('<p class="error">Something went wrong with collecting the address. Could it be that the location of the zipfile has changed?</p>');
+    		}
+    	} else {
+    		die('<p class="error">Something went wrong with downloading the webpage. Could it be that the website ' . $loc . ' is down?</p>');
+    	}
+    } else {
+        // English version
+        $url = 'http://wordpress.org/latest.zip';
+        $filename = 'latest.zip';
+    }
+    
 	echo "<p>Busy installing " . $filename . "</p>";
-
 	// Download the zipfile from the location
 	$data = file_get_contents($url);
 	// upload it to the server
@@ -109,7 +115,7 @@ function wp_install() {
 	$output = shell_exec("rm -rf /home/$wp_user/tmp/wordpress" );
 
 	// echo succes
-	echo "<p>Installation of Wordpress has succeeded.</p>";
+	echo "<p>Installation of WordPress has succeeded.</p>";
 }
 
 
@@ -119,9 +125,9 @@ function wp_install() {
 
 /* Locations */
 $loc_de = 'http://de.wordpress.org/';
-$loc_en = ''; // think about what to do here, the url is different
+$loc_en = 'http://wordpress.org/';
 $loc_nl = 'http://nl.wordpress.org/';
-$loc = $loc_nl; // default location
+$loc = $loc_en; // default location
 ?>
 
 
@@ -138,13 +144,13 @@ $loc = $loc_nl; // default location
 
 <div class="body-content">
 	<p>
-		This is the installer for Wordpress.<br />
-		You can install or update Wordpress on this account, in the specified path (public_html is default).
+		This is the installer for WordPress.<br />
+		You can install or update WordPress on this account, in the specified path (public_html is default).
 	</p>
 	<p>
 		Below it will show you the credentials used for the install. You can decide to install in another directory if you so desire.<br />
-		If you hit "Install" it will install Wordpress in about 10 seconds.<br />
-		Plugins are not being updated, you will have to do that manually via ftp/sftp or in the backend of Wordpress.		
+		If you hit "Install" it will install WordPress in about 10 seconds.<br />
+		Plugins are not being updated, you will have to do that manually via ftp/sftp or in the backend of WordPress.		
 	</p>
 
 	
