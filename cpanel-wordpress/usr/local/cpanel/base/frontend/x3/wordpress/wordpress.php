@@ -1,7 +1,7 @@
 <?php
 /*
  * Wordpress auto installer
- * Version 2.0
+ * Version 2.1
  * Documentation: http://timelord.nl/wordpress/cpanel-plugin-installer-for-wordpress?lang=en
 */
 
@@ -25,7 +25,7 @@ function wp_form() {
 
 	<div style="border:1px solid #2266AA;">
 		<div style="width: 98%; margin: auto;">
-			<p>You are about to install or update Wordpress.</p>
+			<p>You are about to install or update WordPress.</p>
 			<p>Domain: <?php echo $user_domain;?></p>
 			<p>User: <?php echo $user_cpuser;?></p>
 		</div>
