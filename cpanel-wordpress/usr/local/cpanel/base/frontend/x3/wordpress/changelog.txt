@@ -1,6 +1,13 @@
 
 Changelog
 
+2.2
+	- Add option for Language in the installform
+	- Add Thai (th)
+	- Get rid of global variables, only $error is there
+	- Have nicer error handling
+	- restyle html/css
+
 2.1
 	- add English location, make it the default
 
