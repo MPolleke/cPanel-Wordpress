@@ -1,6 +1,9 @@
 
 Changelog
 
+2.3
+	- More Languages supported
+
 2.2
 	- Add option for Language in the installform
 	- Add Thai (th)
