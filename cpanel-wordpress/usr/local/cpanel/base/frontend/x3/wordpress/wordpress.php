@@ -2,7 +2,7 @@
 /*
  * WordPress auto installer
  * Version 2.3
- * Documentation: http://timelord.nl/wordpress/cpanel-plugin-installer-for-wordpress?lang=en
+ * Documentation: https://timelord.nl/cpanel-plugin-installer-for-wordpress?lang=en
 */
 
 
